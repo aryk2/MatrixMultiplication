@@ -1,30 +1,21 @@
 //functions that help test the matrix multiplcation class
 #include "m_mult.h"
 
-//test functions prototype
-//this function allows for the input of matrices and will
-//hopefully (eventually) test the edge cases automatically
-struct matrices;
-void user_input_matrix(matrices & mtrs);
-void test_display(matrices & mtrs);
-void free_mem(matrices & mtrs);
-
-struct matrices {
-    int rows1;
-    int rows2;
-    int columns1;
-    int columns2;
-    float ** matrix1;
-    float ** matrix2;
-    float ** result;
-};
 
 //main calls the user input function, displays the input matrix, calls
 //the rref function and then displays the result 
 int main() {
     matrices mtrs;
     user_input_matrix(mtrs);
-    test_display(mtrs);
+    int result = matrix_multiply(mtrs);
+    if(result)
+        test_display(mtrs);
+    else {
+        cout << "matrices of these sizes cannot be multiplied\n"
+             << "amount of columns in first matrix must match amount\n"
+             << "of rows in second matrix\n";
+    }
+    return 0;
 }
 
 //function that allows user to enter a matrix of any dimension
