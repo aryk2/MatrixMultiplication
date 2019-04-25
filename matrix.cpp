@@ -1,6 +1,11 @@
 //functions that help test the matrix multiplcation class
 #include "m_mult.h"
 
+void user_input_matrix(matrices & mtrs);
+void test_display(matrices & mtrs);
+void free_mem(matrices & mtrs);
+
+
 
 //main calls the user input function, displays the input matrix, calls
 //the rref function and then displays the result 
@@ -18,7 +23,7 @@ int main() {
     return 0;
 }
 
-//function that allows user to enter a matrix of any dimension
+//function that allows user to enter 2 matrices of any size
 void user_input_matrix(matrices & mtrs) {
     cout << "\nenter first matrix to multiply"
          << "\nplease enter how many rows: ";
@@ -82,7 +87,7 @@ void user_input_matrix(matrices & mtrs) {
     mtrs.result = NULL;
 }
 
-//displays matrix passed as arg
+//displays the matrices in the matrices struct
 void test_display(matrices & mtrs) {
     for(int i = 0; i < mtrs.rows1; ++i) {
 	for(int k = 0; k < mtrs.columns1; ++k) 

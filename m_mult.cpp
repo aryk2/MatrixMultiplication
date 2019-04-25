@@ -1,6 +1,11 @@
 //Matrix Multiplcation functions
 #include "m_mult.h"
 
+//this function checks if the dimensions make 
+//multiplcation possible, then makes a result
+//matrix and fills it with the dot product of each
+//row and column of the 2 input matrices.
+//this function returns 0 if it cannot multipy and 1 if it succeeds
 int matrix_multiply(matrices & mtrs) {
     bool multiply = is_possible(mtrs);
     if (!multiply)
@@ -16,12 +21,15 @@ int matrix_multiply(matrices & mtrs) {
     return 1;
 }
 
+//simple condition for matrix multiplication 
 bool is_possible(matrices & mtrs) {
     if(mtrs.columns1 == mtrs.rows2)
 	return true;
     return false;
 }
 
+//dot pruduct is the sum of the correpsonding row values time the 
+//column values. 
 int dot_product(matrices & mtrs, int row, int column) {
     int result = 0;
     int k = 0;

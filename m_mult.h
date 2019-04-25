@@ -2,8 +2,8 @@
 #include <iostream>
 using namespace std;
 
-//function prototypes
-
+// struct interface for input into the matrix
+//multiplcation functions 
 struct matrices {
     int rows1;
     int rows2;
@@ -14,13 +14,11 @@ struct matrices {
     float ** result;
 };
 
+//matrix multiplication function prototypes
 int matrix_multiply(matrices & mtrs);
 bool is_possible(matrices & mtrs);
 int dot_product(matrices & mtrs, int row, int column);
 
-void user_input_matrix(matrices & mtrs);
-void test_display(matrices & mtrs);
-void free_mem(matrices & mtrs);
 
 
 
